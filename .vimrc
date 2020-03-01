@@ -141,9 +141,8 @@ let g:SimpylFold_docstring_preview=1
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
-hi clear CursorLine
-hi CursorLine cterm=underline
-hi CursorLine gui=underline
+" hi clear CursorLine
+" hi CursorLine cterm=underline
 set cursorline! 
 
 map \           :NERDTreeToggle<CR>
