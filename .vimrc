@@ -5,54 +5,55 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" plugin manager
 Plugin 'VundleVim/Vundle.vim'
-"git interface
+
+" git interface
 Plugin 'tpope/vim-fugitive'
-"filesystem
+
+" filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim' 
 
-"html
-"  isnowfy only compatible with python not python3
-" Plugin 'isnowfy/python-vim-instant-markdown'
+"Colors
+Plugin 'joshdick/onedark.vim'
+Plugin 'xero/blaquemagick.vim'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'nelstrom/vim-markdown-preview'
+
 "python sytax checker
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'morhetz/gruvbox'
 
 " Airline : the bottom status line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-"auto-completion stuff
-"Plugin 'klen/python-mode'
+" Autocomplete
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'klen/rope-vim'
-"Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
-""code folding
-Plugin 'tmhedberg/SimpylFold'
 
-"Colors!!!
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
+" code folding
+Plugin 'tmhedberg/SimpylFold'
 
 call vundle#end()
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
 
-colorscheme gruvbox
+" Colors
+" colorscheme onedark 
+colorscheme blaquemagick
+syntax on
+
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols='unicode'
-let airline_theme = 'gruvbox'
-set background=dark
+let airline_theme = 'raven'
+" set background=dark
 
 "autocomplete
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -61,9 +62,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let mapleader=" "
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
-call togglebg#map("<F5>")
-"colorscheme zenburn
-"set guifont=Monaco:h14
+" call togglebg#map("<F5>")
 
 set clipboard=unnamed
 
@@ -150,4 +149,8 @@ set cursorline!
 map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
-inoremap jk <ESC> 
+inoremap jj <ESC> 
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+
+
